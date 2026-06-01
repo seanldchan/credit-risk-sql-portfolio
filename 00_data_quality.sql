@@ -142,7 +142,7 @@ ORDER BY loan_grade;
 -- SECTION 5: Data quality summary flag
 
 -- Consolidates key exclusion criteria into a single CTE that
--- 01_feature_engineering.sql can reference or mirror.
+-- 01_feature_engineering.sql can reference or mirror
 
 WITH quality_flags AS (
     SELECT
