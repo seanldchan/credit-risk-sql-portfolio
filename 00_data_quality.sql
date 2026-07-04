@@ -5,8 +5,16 @@
 -- ============================================================
 
 -- SECTION 1: Row count & basic completeness
-
 SELECT COUNT(*) AS total_rows
+FROM credit_risk_dataset_2;
+
+-- Checking default count to ensure scorecard stability
+-- Industry standard = 1500-2000 minimum defaults for stable coefficient estimation
+-- Statistical standard = 10-20 minimum defaults per predictor variable for logistic regression
+SELECT
+	COUNT(*) AS total_rows,
+    SUM(loan_status) AS total_defaults,
+    ROUND(AVG(loan_status) * 100, 2) AS default_rate_pct
 FROM credit_risk_dataset_2;
 
 -- Null counts across every column
